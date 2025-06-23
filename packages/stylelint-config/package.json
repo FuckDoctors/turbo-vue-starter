@@ -1,0 +1,16 @@
+{
+  "name": "@zhaobc/stylelint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./index.js"
+  },
+  "devDependencies": {
+    "stylelint": "catalog:",
+    "stylelint-config-standard": "catalog:",
+    "postcss-html": "catalog:",
+    "stylelint-config-html": "catalog:",
+    "stylelint-config-hudochenkov": "catalog:"
+  }
+}

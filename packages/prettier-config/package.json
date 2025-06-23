@@ -1,0 +1,12 @@
+{
+  "name": "@zhaobc/prettier-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "devDependencies": {
+    "prettier": "catalog:"
+  }
+}

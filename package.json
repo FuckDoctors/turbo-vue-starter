@@ -1,0 +1,38 @@
+{
+  "name": "turbo-vue-starter",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,vue,html,css,scss,md,json,mjs,cjs}\"",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "test": "turbo run test",
+    "check-types": "turbo run check-types",
+    "prepare": "husky install",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@zhaobc/eslint-config": "workspace:*",
+    "@zhaobc/tsconfig": "workspace:*",
+    "@zhaobc/commitlint-config": "workspace:*",
+    "@zhaobc/prettier-config": "workspace:*",
+    "@zhaobc/stylelint-config": "workspace:*",
+    "eslint": "catalog:",
+    "husky": "catalog:",
+    "stylelint": "catalog:",
+    "conventional-changelog-cli": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "shx": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "turbo": "catalog:"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "package-manager-strict": false,
+  "engines": {
+    "node": ">=22"
+  }
+}
