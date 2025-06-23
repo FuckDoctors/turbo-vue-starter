@@ -1,1 +1,1 @@
-export { default } from '@zhaobc/eslint-config';
+export { default } from '@zhaobc/eslint-config'

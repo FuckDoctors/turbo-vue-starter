@@ -1,1 +1,1 @@
-export { default } from '@zhaobc/lint-staged';
+export { default } from '@zhaobc/lint-staged'

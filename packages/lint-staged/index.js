@@ -3,7 +3,10 @@
  * @type {import('lint-staged').Configuration}
  */
 export default {
-  '*.{js,jsx,ts,tsx}': ['prettier --cache --ignore-unknown  --write', 'eslint --cache --fix'],
+  '*.{js,jsx,ts,tsx}': [
+    'prettier --cache --ignore-unknown  --write',
+    'eslint --cache --fix',
+  ],
   '*.{scss,less,styl,html,vue,css}': [
     'prettier --cache --ignore-unknown --write',
     'stylelint --fix --allow-empty-input --cache',

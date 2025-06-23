@@ -1,6 +1,7 @@
 {
   "name": "turbo-vue-starter",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
@@ -9,30 +10,48 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
     "check-types": "turbo run check-types",
-    "prepare": "husky install",
-    "commit": "cz"
+    "prepare": "husky",
+    "cm": "cz"
   },
   "devDependencies": {
     "@commitlint/cli": "catalog:",
-    "@zhaobc/eslint-config": "workspace:*",
-    "@zhaobc/tsconfig": "workspace:*",
     "@zhaobc/commitlint-config": "workspace:*",
+    "@zhaobc/eslint-config": "workspace:*",
     "@zhaobc/prettier-config": "workspace:*",
     "@zhaobc/stylelint-config": "workspace:*",
+    "@zhaobc/tsconfig": "workspace:*",
+    "@zhaobc/lint-staged": "workspace:*",
+    "commitizen": "catalog:",
+    "conventional-changelog-cli": "catalog:",
+    "cz-conventional-changelog": "catalog:",
     "eslint": "catalog:",
     "husky": "catalog:",
-    "stylelint": "catalog:",
-    "conventional-changelog-cli": "catalog:",
     "lint-staged": "catalog:",
     "prettier": "catalog:",
     "shx": "catalog:",
     "simple-git-hooks": "catalog:",
+    "stylelint": "catalog:",
+    "vitest": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "jsdom": "catalog:",
+    "happy-dom": "catalog:",
     "turbo": "catalog:"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && pnpx cz --hook || true"
+    }
   },
   "packageManager": "pnpm@10.11.0",
   "package-manager-strict": false,
   "engines": {
     "node": ">=22"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

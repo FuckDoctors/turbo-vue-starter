@@ -9,7 +9,10 @@
   "devDependencies": {
     "eslint": "catalog:",
     "@antfu/eslint-config": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
     "eslint-plugin-turbo": "catalog:",
-    "eslint-plugin-vue": "catalog:"
+    "eslint-config-turbo": "catalog:",
+    "eslint-plugin-vue": "catalog:",
+    "eslint-plugin-format": "catalog:"
   }
 }

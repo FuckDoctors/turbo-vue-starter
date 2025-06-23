@@ -3,7 +3,7 @@
  * @type {import("prettier").Config}
  */
 
-module.exports = {
+export default {
   useTabs: false,
   tabWidth: 2,
   singleQuote: true,
@@ -11,5 +11,5 @@ module.exports = {
   trailingComma: 'es5',
   bracketSameLine: false,
   arrowParens: 'avoid',
-  quoteProps: 'as-needed'
+  quoteProps: 'as-needed',
 }

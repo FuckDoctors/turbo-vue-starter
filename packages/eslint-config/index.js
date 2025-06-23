@@ -1,26 +1,16 @@
 import antfu from '@antfu/eslint-config'
-import turboConfig from "eslint-config-turbo/flat"
+import turboConfig from 'eslint-config-turbo/flat'
 
 export default antfu(
-  {
-    "plugins": ["turbo"],
-    "rules": {
-      "turbo/no-undeclared-env-vars": [
-        "error",
-        {
-          "allowList": ["^ENV_[A-Z]+$"]
-        }
-      ]
-    }
-  },
   {
     unocss: true,
     formatters: true,
 
-    ignores: [
-      'dist/',
-      'public/',
-    ],
+    // TypeScript and Vue are autodetected, you can also explicitly enable them:
+    typescript: true,
+    vue: true,
+
+    ignores: ['dist/', 'public/'],
   },
   {
     rules: {
@@ -51,5 +41,6 @@ export default antfu(
       'vue/no-irregular-whitespace': ['warn'],
       'no-irregular-whitespace': ['warn'],
     },
-  }
+  },
+  turboConfig
 )
