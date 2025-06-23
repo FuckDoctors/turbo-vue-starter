@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["ES2015"],
     "outDir": "./dist",
-    "types": ["jest", "node"]
+    "types": ["vitest", "node"]
   },
   "include": ["."],
   "exclude": ["node_modules", "dist"]

@@ -1,0 +1,66 @@
+name: Test And Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+  push:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v4
+        with:
+          # version: latest
+          run_install: |
+            - recursive: true
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Type Check
+        run: pnpm check-types
+
+      - name: Tests
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm test:coverage
+
+      - name: Build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm build

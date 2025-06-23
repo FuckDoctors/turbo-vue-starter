@@ -1,4 +1,4 @@
-import type { Express } from 'express'
+import type { Express, Request, Response } from 'express'
 import cors from 'cors'
 import express from 'express'
 import morgan from 'morgan'
@@ -11,11 +11,11 @@ export function createServer(): Express {
     .use(express.urlencoded({ extended: true }))
     .use(express.json())
     .use(cors())
-    .get('/message/:name', (req, res) => {
-      return res.json({ message: `hello ${req.params.name}` })
+    .get('/message/:name', async (req: Request, res: Response) => {
+      res.json({ message: `hello ${req.params.name}` })
     })
-    .get('/status', (_, res) => {
-      return res.json({ ok: true })
+    .get('/status', async (_: Request, res: Response) => {
+      res.json({ ok: true })
     })
 
   return app
