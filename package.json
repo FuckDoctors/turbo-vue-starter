@@ -41,7 +41,9 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && pnpx cz --hook || true"
+      "prepare-commit-msg": "exec < /dev/tty && pnpx cz --hook || true",
+      "pre-commit": "npx --no-install lint-staged",
+      "commit-message": "npx --no-install commitlint --edit \\$1"
     }
   },
   "packageManager": "pnpm@10.11.0",
